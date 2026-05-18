@@ -12,7 +12,7 @@ on:
       - "ops-app/**"
 
 env:
-  DOCKERHUB_IMAGE: dockerlecture/gitops-app
+  DOCKERHUB_IMAGE: alpacadash/gitops-app
   CONFIG_REPO: alpacadash/gitops-config
   CONFIG_REPO_PATH: apps/gitops-app/overlays
 
@@ -85,7 +85,7 @@ jobs:
         run: |
           cd config-repo/${{ env.CONFIG_REPO_PATH }}/dev
           kustomize edit set image \
-            gitops-app=dockerlecture/gitops-app:$IMAGE_TAG
+            gitops-app=alpacadash/gitops-app:$IMAGE_TAG
 
       - name: Config Repo 커밋 및 Push
         env:
