@@ -12,8 +12,6 @@ RUN apk add --no-cache curl
 WORKDIR /app
 
 COPY --from=builder /app/target/*.jar app.jar
-RUN chown spring:spring app.jar
-
 EXPOSE 8080
 
 ENTRYPOINT ["java", "-jar", "app.jar"]
